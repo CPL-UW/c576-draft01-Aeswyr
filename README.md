@@ -23,4 +23,4 @@ Known issues
         - In tower placement mode, E to place towers (if you have the parts)
         - in clock mode, click on either gear to begin tuning that gear. (You cannot tune a gear below time 00:00, or beyond the current time)
 
- Builds can be found inside the Builds folder
+ Builds can be found inside the GameBuilds folder
