@@ -32,6 +32,8 @@ public class TowerController : MonoBehaviour
     }
 
     public void Reload() {
+        if (!GameController.Instance.TrySpendAmmo(1) || shots == MAX_SHOTS)
+            return;
         shots = MAX_SHOTS;
         ammo.Set((float)shots / MAX_SHOTS);
     }

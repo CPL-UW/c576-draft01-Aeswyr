@@ -14,6 +14,12 @@ public class PrefabList : ScriptableObject {
         }
         return null;
     }
+
+    public GameObject Get(int index) {
+        if (index >= prefabs.Length)
+            return null;
+        return prefabs[index].obj;
+    }
 }
 
 [Serializable] struct ObjectStringPair {

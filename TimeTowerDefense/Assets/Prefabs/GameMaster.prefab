@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11ce0ecda3be6441876fac91c43db07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clockCanvas: {fileID: 0}
+  hudCanvas: {fileID: 0}
+  playerMode: {fileID: 0}
+  clockController: {fileID: 0}
+  gameStateText: {fileID: 0}
+  levelList: {fileID: 11400000, guid: 408ea05d8024fed47b1fbf0a13ea1f06, type: 2}
+  player: {fileID: 0}

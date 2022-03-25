@@ -19,10 +19,13 @@ public class HUDController : Singleton<HUDController>
     }
 
     private void FixedUpdate() {
-        if (GameController.Instance.tickDiff > 0)
-            time--;
-        else
-            time++;
+        if (GameController.Instance.unpaused)
+        {
+            if (GameController.Instance.tickDiff > 0)
+                time--;
+            else
+                time++;
+        }
         int min = (int)((time / 25) % 12) * 5;
         int hr = (int)((time / 5 / 60) % 12);
         string smin = "";
@@ -39,6 +42,10 @@ public class HUDController : Singleton<HUDController>
     public long ForceTickDiff(long newTick) {
         long dif = time - newTick;
         return dif;
+    }
+
+    public void ForceTick(long newTick) {
+        time = newTick;
     }
 
     public long GetTick() {
