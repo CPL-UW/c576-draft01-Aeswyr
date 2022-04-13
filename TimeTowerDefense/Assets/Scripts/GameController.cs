@@ -68,6 +68,7 @@ public class GameController : Singleton<GameController>
     public void SetVictoryState(bool state) {
         gameStateText.gameObject.SetActive(true);
         if (state) {
+            Analytics.LogEvent("LEVELWIN", $"{currLvl}");
             gameStateText.text = "Win!!";
             PlayerPrefs.SetInt("FurthestLevel", currLvl + 1);
             if (levelList.Get(currLvl + 1) != null)

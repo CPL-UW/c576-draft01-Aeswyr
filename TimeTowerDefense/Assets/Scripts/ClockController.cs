@@ -14,6 +14,7 @@ public class ClockController : MonoBehaviour
     private long currtime;
     private long targettime;
     public void Apply() {
+        Analytics.LogEvent("CLOCKCHANGE", $"{currtime-targettime}");
         GameController.Instance.StartRollback(targettime);
         GameController.Instance.Gamemode = Mode.MOVE;
         GameController.Instance.SyncPlayerMode();

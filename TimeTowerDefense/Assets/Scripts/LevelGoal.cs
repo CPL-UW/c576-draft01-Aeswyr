@@ -11,6 +11,7 @@ public class LevelGoal : MonoBehaviour
         other.transform.parent.gameObject.GetComponent<EnemyController>().Remove();
         if (hp <= 0) {
             GameController.Instance.lossFlag = true;
+            Analytics.LogEvent("LEVELLOST", "");
         }
     }
 

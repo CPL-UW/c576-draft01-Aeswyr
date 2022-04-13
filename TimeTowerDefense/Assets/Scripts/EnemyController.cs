@@ -44,6 +44,7 @@ public class EnemyController : MonoBehaviour
             GameController.Instance.AddAmmo(1);
         if (spawnData.carry == CarryType.PARTS)
             GameController.Instance.AddParts(1);
+        Analytics.LogEvent("ENEMYDEFEATED", $"{spawnTick}");
         Remove();
     }
 
