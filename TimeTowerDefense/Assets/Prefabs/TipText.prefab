@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2114743501449594749}
   - component: {fileID: 3627804635394484875}
   - component: {fileID: 1880497398799786426}
+  - component: {fileID: 5640687328017179781}
   m_Layer: 0
   m_Name: TipText
   m_TagString: Untagged
@@ -173,6 +174,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3627804635394484875}
   m_maskType: 0
+--- !u!114 &5640687328017179781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509936844478074954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf2eace943e3694faa0c90808d1c231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDelay: 1
+  text: {fileID: 1880497398799786426}
 --- !u!1 &2839835947020742002
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +245,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &6575224751030475891
 MonoBehaviour:
@@ -246,14 +261,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action:
     m_PersistentCalls:
+      m_Calls: []
+  enterAction:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1509936844478074954}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 5640687328017179781}
+        m_TargetAssemblyTypeName: TooltipController, Assembly-CSharp
+        m_MethodName: FadeIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  exitAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5640687328017179781}
+        m_TargetAssemblyTypeName: TooltipController, Assembly-CSharp
+        m_MethodName: FadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

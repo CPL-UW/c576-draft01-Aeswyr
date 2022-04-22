@@ -2229,7 +2229,9 @@ MonoBehaviour:
   levelObjectParent: {fileID: 1792433527938342883}
   levelGoal: {fileID: 7997938025353299433}
   spawnOrder: {fileID: 11400000, guid: 549ad86abe3f25d41bcf412047f80320, type: 2}
-  enemyPrefab: {fileID: 403234655114625912, guid: f287d01c30fce2e418ab4dcf840dee1b, type: 3}
+  enemyList: {fileID: 11400000, guid: 12697f81a3834c048b6149a56aa248e8, type: 2}
+  startingParts: 1
+  startingAmmo: 0
   lossFlag: 0
 --- !u!1001 &1445046479675387923
 PrefabInstance:

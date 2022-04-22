@@ -86,6 +86,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enterAction:
+    m_PersistentCalls:
+      m_Calls: []
+  exitAction:
+    m_PersistentCalls:
+      m_Calls: []
+  stayAction:
+    m_PersistentCalls:
+      m_Calls: []
+  triggersHint: 1
 --- !u!1 &3985164589771091491
 GameObject:
   m_ObjectHideFlags: 0

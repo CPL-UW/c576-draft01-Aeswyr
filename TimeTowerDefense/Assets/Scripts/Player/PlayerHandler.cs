@@ -16,6 +16,7 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField] private PrefabList towerList;
     [SerializeField] private ModeHandler mode;
     [SerializeField] private LayerMask interactMask;
+    [SerializeField] private GameObject interactObj;
     private GameObject towerIndicator;
     private bool modeSelect;
 
@@ -91,8 +92,8 @@ public class PlayerHandler : MonoBehaviour
             }
             if (GameController.Instance.Gamemode == Mode.MOVE) {
                 Collider2D obj = Physics2D.OverlapPoint(transform.position, interactMask);
-                if (obj != null) {
-                    obj.GetComponent<InteractController>().OnInteract();
+                if (obj != null && obj.TryGetComponent(out InteractController interact) && interact.CanInteract()) {
+                    interact.OnInteract();
                 }
             }
         }
@@ -115,5 +116,10 @@ public class PlayerHandler : MonoBehaviour
         if (GameController.Instance.Gamemode == Mode.PLACE) {
             towerIndicator = Instantiate(towerIndicatorPrefab);
         }
+    }
+
+    public void TrySetInteract(bool state) {
+        Collider2D obj = Physics2D.OverlapPoint(transform.position, interactMask);
+        interactObj.SetActive(state && obj != null && obj.TryGetComponent(out InteractController interact) && interact.TriggersHint());
     }
 }

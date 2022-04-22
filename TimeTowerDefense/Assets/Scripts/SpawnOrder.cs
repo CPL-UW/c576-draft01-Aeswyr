@@ -32,11 +32,12 @@ public class SpawnOrder : ScriptableObject {
     public float spawnTime;
     public CarryType carry;
     public int id;
+    public string data;
     
 }
 
 public enum EnemyType {
-    DEFAULT, BASIC,
+    DEFAULT, BASIC, TIME
 }
 public enum CarryType {
     NONE, AMMO, PARTS, 

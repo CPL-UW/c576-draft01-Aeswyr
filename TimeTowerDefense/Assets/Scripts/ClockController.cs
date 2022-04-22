@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ClockController : MonoBehaviour
@@ -11,6 +10,9 @@ public class ClockController : MonoBehaviour
     [SerializeField] private GameObject minKey;
     [SerializeField] private GameObject hrButtons;
     [SerializeField] private GameObject hrKey;
+    [SerializeField] private GameObject timerObj;
+    [SerializeField] private TextMeshProUGUI timer;
+    [SerializeField] private int timerLevelIndex = 5;
     private long currtime;
     private long targettime;
     public void Apply() {
@@ -65,11 +67,22 @@ public class ClockController : MonoBehaviour
 
         minHand.transform.rotation = Quaternion.Euler(0, 0, -360 * min / 60);
         hrHand.transform.rotation = Quaternion.Euler(0, 0, -360 * hr / 12);
+
+        string smin = "";
+        if (min < 10)
+            smin += "0";
+        smin += min.ToString();
+        string shr = "";
+        if (hr < 10)
+            shr += "0";
+        shr += hr.ToString();
+        timer.text = $"{shr}:{smin}";
     }
 
     public void OpenClock() {
         currtime = HUDController.Instance.GetTick();
         targettime = currtime;
         UpdateClockFace();
+        timerObj.SetActive(GameController.Instance.getLevelIndex() < timerLevelIndex);
     }
 }

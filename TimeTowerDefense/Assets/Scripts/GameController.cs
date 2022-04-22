@@ -145,6 +145,10 @@ public class GameController : Singleton<GameController>
         LoadNextLevel();
     }
 
+    public int getLevelIndex() {
+        return currLvl;
+    }
+
 }
 
 public enum Mode {

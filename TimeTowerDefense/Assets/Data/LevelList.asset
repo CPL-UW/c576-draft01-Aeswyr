@@ -25,3 +25,5 @@ MonoBehaviour:
     obj: {fileID: 7156862512813488397, guid: 4af90b314ebd5a54aaeb978e20b82722, type: 3}
   - name: Level5
     obj: {fileID: 7156862512813488397, guid: 88c792e65ed012b4787a1c009c7b22cf, type: 3}
+  - name: Level6
+    obj: {fileID: 7156862512813488397, guid: a844153d3f73a4346a46104f99cd76c4, type: 3}

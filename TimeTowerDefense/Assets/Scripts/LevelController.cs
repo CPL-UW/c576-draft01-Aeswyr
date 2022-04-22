@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private GameObject levelObjectParent;
     [SerializeField] private GameObject levelGoal;
     [SerializeField] private SpawnOrder spawnOrder;
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private PrefabList enemyList;
     [SerializeField] private int startingParts = 1;
     [SerializeField] private int startingAmmo = 0;
     private List<SpawnData> toSpawn;
@@ -44,7 +44,7 @@ public class LevelController : MonoBehaviour
             return;
         
         if (tickDiff == 0 && toSpawn.Count > 0 && Time.time > toSpawn[0].spawnTime + timeMod) {
-            GameObject enemy = Instantiate(enemyPrefab, levelObjectParent.transform);
+            GameObject enemy = Instantiate(enemyList.Get((int)(toSpawn[0].type) - 1), levelObjectParent.transform);
             enemy.transform.position = spawnPoint.transform.position;
             EnemyController controller = enemy.GetComponent<EnemyController>();
             controller.spawnData = toSpawn[0];

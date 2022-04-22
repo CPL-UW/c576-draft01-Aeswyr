@@ -51,4 +51,8 @@ public class HUDController : Singleton<HUDController>
     public long GetTick() {
         return time;
     }
+
+    public int GetHour() {
+        return (int)((time / 5 / 60) % 12);
+    }
 }

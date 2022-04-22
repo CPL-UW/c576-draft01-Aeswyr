@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1484278992142167590, guid: 96b00b5b01dd0e7469947cc513267664, type: 3}
+      propertyPath: spawnOrder
+      value: 
+      objectReference: {fileID: 11400000, guid: c7f0c9d87b938d64886cb91ab7a5c502, type: 2}
+    - target: {fileID: -1484278992142167590, guid: 96b00b5b01dd0e7469947cc513267664, type: 3}
+      propertyPath: startingAmmo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 88713675174786451, guid: 96b00b5b01dd0e7469947cc513267664, type: 3}
       propertyPath: m_RootOrder
       value: 0
